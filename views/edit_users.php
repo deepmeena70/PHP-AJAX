@@ -1,11 +1,26 @@
 <?php foreach($result as $key=>$val): ?>
 <tr>
-    <form action="/update.php" method="GET">
-        <input type="hidden" name="id" value="<?php echo $val[0]?>">
-        <input type="text" name="username" value="<?php echo$val[1] ?>">                
-        <input type="email" name="email" value="<?php echo$val[2] ?>">                
-        <input type="password" name="password" value="<?php echo$val[3] ?>"> 
-        <input type="submit" name="" value="Update">               
+    <form id="update">
+        <th scope="row">
+            <?php echo $val[0]?>
+        </th>
+        
+        <input id="id" type="hidden" name="id" value="<?php echo $val[0]?>">
+        
+        <td>
+            <input id="username" type="text" name="username" value="<?php echo $val[1] ?>"> 
+        </td>
+        <td>
+            <input id="email" type="email" name="email" value="<?php echo$val[2] ?>"> 
+        </td> 
+        <td>              
+            <input id="password" type="password" name="password" value="<?php echo$val[3] ?>"> 
+        </td>
+        <td>
+            <input class="btn btn-primary" type="submit" value="Update" >               
+        </td>
     </form>
 </tr>
 <?php endforeach?>
+
+

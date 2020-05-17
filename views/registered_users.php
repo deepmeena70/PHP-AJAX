@@ -2,7 +2,7 @@
 
 <body>
 
-    <div class="container">
+    <div id="main" class="container">
 
 
         <table class="table table-bordered mt-5">
@@ -27,6 +27,9 @@
         </div>
         
     </div>
+
+    <script src="ajax.js">       
+    </script>
 
 </body>
 
