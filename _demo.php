@@ -29,4 +29,6 @@ function show_row($conn,$id)
     
     */
 
+    $db->create_table($conn);
+
     

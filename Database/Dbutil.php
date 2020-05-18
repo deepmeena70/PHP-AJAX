@@ -127,7 +127,10 @@ class Dbutil
             $stmt = $conn->start()->prepare("DELETE FROM users where id=?");
             $stmt->bindParam(1, $id);
             $stmt->execute();
-            $stmt = $conn->start()->prepare("ALTER TABLE users AUTO_INCREMENT = 1");
+            $stmt = $conn->start()->prepare("ALTER TABLE users DROP COLUMN id");
+            // $stmt = $conn->start()->prepare("ALTER TABLE users AUTO_INCREMENT =1");
+            $stmt->execute();
+            $stmt = $conn->start()->prepare("ALTER TABLE users ADD COLUMN id  INT UNSIGNED  AUTO_INCREMENT PRIMARY KEY FIRST");
             $stmt->execute();
         } catch (PDOException $e) {
             echo $stmt . "<br>" . $e->getMessage();

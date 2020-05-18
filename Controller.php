@@ -28,7 +28,11 @@
 
             $pass = $user->getPassword();
 
+                        
             $db->create_data($conn, $username, $email ,$pass);
+            
+
+            // $db->create_data($conn, $username, $email ,$pass);
 
             header('Location: /');
             die(); 
